@@ -1,0 +1,383 @@
+line 1 contains 1 token: 
+   //-----------------------------------------------------------------------------
+
+line 2 contains 2 tokens: 
+   //
+   FileIO.c
+
+line 3 contains 10 tokens: 
+   //
+   Illustrates
+   file
+   input-output
+   commands
+   and
+   text
+   processing
+   using
+   the
+
+line 4 contains 6 tokens: 
+   //
+   string
+   functions
+   strtok
+   and
+   strcat.
+
+line 5 contains 1 token: 
+   //
+
+line 6 contains 2 tokens: 
+   //
+   compile:
+
+line 7 contains 1 token: 
+   //
+
+line 8 contains 7 tokens: 
+   //
+   gcc
+   -std=c17
+   -Wall
+   -o
+   FileIO
+   FileIO.c
+
+line 9 contains 1 token: 
+   //
+
+line 10 contains 1 token: 
+   //-----------------------------------------------------------------------------
+
+line 11 contains 1 token: 
+   #include<stdio.h>
+
+line 12 contains 1 token: 
+   #include<stdlib.h>
+
+line 13 contains 1 token: 
+   #include<stdbool.h>
+
+line 14 contains 1 token: 
+   #include<string.h>
+
+line 15 contains 0 tokens: 
+
+line 16 contains 3 tokens: 
+   #define
+   MAX_LEN
+   300
+
+line 17 contains 0 tokens: 
+
+line 18 contains 6 tokens: 
+   int
+   main(int
+   argc,
+   char
+   *
+   argv[]){
+
+line 19 contains 0 tokens: 
+
+line 20 contains 3 tokens: 
+   int
+   token_count,
+   line_count;
+
+line 21 contains 3 tokens: 
+   FILE
+   *in,
+   *out;
+
+line 22 contains 2 tokens: 
+   char
+   line[MAX_LEN];
+
+line 23 contains 2 tokens: 
+   char
+   tokenBuffer[MAX_LEN];
+
+line 24 contains 2 tokens: 
+   char*
+   token;
+
+line 25 contains 0 tokens: 
+
+line 26 contains 9 tokens: 
+   //
+   check
+   command
+   line
+   for
+   correct
+   number
+   of
+   arguments
+
+line 27 contains 5 tokens: 
+   if(
+   argc
+   !=
+   3
+   ){
+
+line 28 contains 7 tokens: 
+   printf("Usage:
+   %s
+   <input
+   file>
+   <output
+   file>\n",
+   argv[0]);
+
+line 29 contains 1 token: 
+   exit(1);
+
+line 30 contains 1 token: 
+   }
+
+line 31 contains 0 tokens: 
+
+line 32 contains 7 tokens: 
+   //
+   open
+   files
+   for
+   reading
+   and
+   writing
+
+line 33 contains 4 tokens: 
+   in
+   =
+   fopen(argv[1],
+   "r");
+
+line 34 contains 3 tokens: 
+   if(
+   in==NULL
+   ){
+
+line 35 contains 8 tokens: 
+   printf("Unable
+   to
+   open
+   file
+   %s
+   for
+   reading\n",
+   argv[1]);
+
+line 36 contains 1 token: 
+   exit(1);
+
+line 37 contains 1 token: 
+   }
+
+line 38 contains 0 tokens: 
+
+line 39 contains 4 tokens: 
+   out
+   =
+   fopen(argv[2],
+   "w");
+
+line 40 contains 3 tokens: 
+   if(
+   out==NULL
+   ){
+
+line 41 contains 8 tokens: 
+   printf("Unable
+   to
+   open
+   file
+   %s
+   for
+   writing\n",
+   argv[2]);
+
+line 42 contains 1 token: 
+   exit(1);
+
+line 43 contains 1 token: 
+   }
+
+line 44 contains 0 tokens: 
+
+line 45 contains 12 tokens: 
+   //
+   read
+   each
+   line
+   of
+   input
+   file,
+   then
+   count
+   and
+   print
+   tokens
+
+line 46 contains 3 tokens: 
+   line_count
+   =
+   0;
+
+line 47 contains 7 tokens: 
+   while(
+   fgets(line,
+   MAX_LEN,
+   in)
+   !=
+   NULL)
+   {
+
+line 48 contains 1 token: 
+   line_count++;
+
+line 49 contains 0 tokens: 
+
+line 50 contains 6 tokens: 
+   //
+   get
+   tokens
+   in
+   this
+   line
+
+line 51 contains 3 tokens: 
+   token_count
+   =
+   0;
+
+line 52 contains 3 tokens: 
+   tokenBuffer[0]
+   =
+   '\0';
+
+line 53 contains 0 tokens: 
+
+line 54 contains 4 tokens: 
+   //
+   get
+   first
+   token
+
+line 55 contains 5 tokens: 
+   token
+   =
+   strtok(line,
+   "
+   \n");
+
+line 56 contains 0 tokens: 
+
+line 57 contains 8 tokens: 
+   while(
+   token!=NULL
+   ){
+   //
+   we
+   have
+   a
+   token
+
+line 58 contains 4 tokens: 
+   //
+   update
+   token
+   buffer
+
+line 59 contains 3 tokens: 
+   strcat(tokenBuffer,
+   "
+   ");
+
+line 60 contains 2 tokens: 
+   strcat(tokenBuffer,
+   token);
+
+line 61 contains 2 tokens: 
+   strcat(tokenBuffer,
+   "\n");
+
+line 62 contains 1 token: 
+   token_count++;
+
+line 63 contains 0 tokens: 
+
+line 64 contains 4 tokens: 
+   //
+   get
+   next
+   token
+
+line 65 contains 5 tokens: 
+   token
+   =
+   strtok(NULL,
+   "
+   \n");
+
+line 66 contains 1 token: 
+   }
+
+line 67 contains 0 tokens: 
+
+line 68 contains 6 tokens: 
+   //
+   print
+   tokens
+   in
+   this
+   line
+
+line 69 contains 8 tokens: 
+   fprintf(out,
+   "line
+   %d
+   contains
+   %d
+   ",
+   line_count,
+   token_count);
+
+line 70 contains 5 tokens: 
+   fprintf(out,
+   "token%s:
+   \n",
+   token_count==1?"":"s"
+   );
+
+line 71 contains 3 tokens: 
+   fprintf(out,
+   "%s\n",
+   tokenBuffer);
+
+line 72 contains 1 token: 
+   }
+
+line 73 contains 0 tokens: 
+
+line 74 contains 3 tokens: 
+   //
+   close
+   files
+
+line 75 contains 1 token: 
+   fclose(in);
+
+line 76 contains 1 token: 
+   fclose(out);
+
+line 77 contains 0 tokens: 
+
+line 78 contains 1 token: 
+   return(0);
+
+line 79 contains 1 token: 
+   }
+
